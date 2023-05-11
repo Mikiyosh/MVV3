@@ -2,7 +2,7 @@
 
 ## DEMO
 
-  - mikiyosh.github.io/MVV/
+  - https://mikiyosh.github.io/MVV/
 
 ## 紹介と使い方
 
