@@ -599,9 +599,8 @@ li {
     height: 20px;
     font-size: 14px;
     font-weight: bold;
-
     position: absolute;
-    top: 137%;
+    top: 136.8%;
     left: 23.5%;
     transform: translate(-50%, -50%);
     z-index: 1;
