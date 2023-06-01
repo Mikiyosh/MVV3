@@ -2339,6 +2339,8 @@
               name: $("#name").val(),
               term: $("#term").val(),
               text: $("#text").val(),
+              time: serverTimestamp(),
+
               kavg: kavgValue,
               iavg: iavgValue,
               lavg: lavgValue,
@@ -2346,16 +2348,18 @@
               havg: havgValue,
               flavg: flavgValue,
               tavg: tavgValue,
+
             };
 
             addDoc(collection(db, "chat"), postData);
             alert("送信されました"); // メッセージを表示する
-            console.log($("#grade").val())
+
           });
 
 
           // データ取得処理
           const q = query(collection(db, "chat"), orderBy("time", "desc"));
+
           onSnapshot(q, (querySnapshot) => {
 
             const documents = [];

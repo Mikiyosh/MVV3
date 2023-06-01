@@ -138,6 +138,11 @@
             width: 220px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            font-weight: normal;
+            padding: 0 0 0 10px;
         }
 
         #gradis {
@@ -145,7 +150,25 @@
             width: 220px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            font-weight: normal;
+            padding: 0 0 0 10px;
         }
+
+        #output {
+            height: 40px;
+            width: 220px;
+            margin-top: 45px;
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            padding: 0 0 0 0;
+        }
+
+
+
 
 
         #keywordSelect {
@@ -159,6 +182,7 @@
             width: 190px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            margin: 0 0 5px 0;
         }
 
         #valueSelect2 {
@@ -166,6 +190,7 @@
             width: 190px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            margin: 0 0 5px 0;
         }
 
         #valueSelect3 {
@@ -173,6 +198,7 @@
             width: 190px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            margin: 0 0 5px 0;
         }
 
         #valueSelect4 {
@@ -180,6 +206,7 @@
             width: 190px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            margin: 0 0 5px 0;
         }
 
         #valueSelect5 {
@@ -187,6 +214,7 @@
             width: 190px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            margin: 0 0 5px 0;
         }
 
         #valueSelect6 {
@@ -194,6 +222,7 @@
             width: 190px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            margin: 0 0 5px 0;
         }
 
         #searchButton {
@@ -342,13 +371,48 @@
             text-align: center;
         }
 
-        #sdis {
-            display: flex;
-            align-items: center;
+        #kscore {
+            height: 40px;
+            font-weight: bold;
+            font-size: 24px;
             text-align: center;
-            font-weight: normal;
-            padding: 0 0 0 10px;
         }
+
+        #iscore {
+            height: 40px;
+            font-weight: bold;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        #lscore {
+            height: 40px;
+            font-weight: bold;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        #fscore {
+            height: 40px;
+            font-weight: bold;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        #hscore {
+            height: 40px;
+            font-weight: bold;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        #flscore {
+            height: 40px;
+            font-weight: bold;
+            font-size: 24px;
+            text-align: center;
+        }
+
 
         .valuekpi {
             font-size: 20px;
@@ -693,7 +757,6 @@
 
                                 htmlElements.push(`
             <li id="${document.id}">
-                <p>所属部署：${document.data.grade}</p>  
                 <p>${document.data.text}</p>  
               
           
@@ -705,8 +768,18 @@
                                 $("#sdis").text(secValue);
                                 const graValue = document.data.grade;
                                 $("#gradis").text(graValue);
-
-
+                                const kavgValue = document.data.kavg;
+                                $("#kscore").text(kavgValue);
+                                const iavgValue = document.data.iavg;
+                                $("#iscore").text(iavgValue);
+                                const lavgValue = document.data.lavg;
+                                $("#lscore").text(lavgValue);
+                                const favgValue = document.data.favg;
+                                $("#fscore").text(favgValue);
+                                const havgValue = document.data.havg;
+                                $("#hscore").text(havgValue);
+                                const flavgValue = document.data.flavg;
+                                $("#flscore").text(flavgValue);
                             }
                         });
 
@@ -763,8 +836,7 @@
                                 if (document.data.name && document.data.name.includes(keyword2)) {
                                     htmlElements2.push(`
                     <li id="${document.id}">
-            
-                        <p>${document.data.ktext}</p>
+                                    <p>${document.data.ktext}</p>
                 
                     </li>
             `);
