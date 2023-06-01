@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chatApp</title>
+    <style>
+        body {}
+
+        #output li {
+
+            margin: 0 0 7px 0;
+            list-style-type: none;
+
+            padding: 5px 15px 15px 15px;
+            background-color: white;
+
+
+        }
+
+        .empwrapper {
+            height: 455px;
+            margin: 5px 0 10px 15px;
+
+        }
+
+        .empde {
+            font-weight: bold;
+            height: 180px;
+
+            padding: 5px 15px 15px 15px;
+            margin: 5px 0 10px 5px;
+
+
+        }
+
+        .empinf {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 20px 0 0 15px
+        }
+
+        .evaterm {
+            font-weight: bold;
+            font-size: 24px;
+            margin: auto;
+            padding: 20px 0 0 0;
+        }
+
+        .evaterm2 {
+            width: 400px;
+            font-weight: bold;
+            margin: 0 0 0 35px;
+            padding: 20px 0 0 0;
+            font-size: 24px;
+        }
+
+        .evaterm3 {
+            width: 400px;
+            font-weight: bold;
+            margin: 0 0 0 35px;
+            padding: 150px 0 0 400px;
+            font-size: 24px;
+        }
+
+        .empname {
+            font-weight: bold;
+            font-size: 24px;
+            margin: auto;
+            padding: 20px 0 0 0;
+
+        }
+
+        .selfeva {
+            height: 250px;
+            margin: 5px 15px 0 0;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .selfeva2 {
+            height: 250px;
+            margin: 5px 15px 0px 0;
+            width: 790px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+
+        .selfeva3 {
+            height: 950x;
+            margin: 5px 15px 0px 430px;
+
+            width: 180px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .centered-text {
+            text-align: center;
+        }
+
+
+
+        .valueele {
+
+            font-weight: bold;
+            height: 600px;
+
+            padding: 5px 15px 15px 15px;
+            margin: 5px 0 10px 20px;
+            background-color: white;
+
+        }
+
+        .valueelements {
+            display: flex;
+        }
+
+        #searchInput {
+            height: 40px;
+            width: 220px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 0 0 0 10px;
+        }
+
+
+        #sdis {
+            height: 40px;
+            width: 220px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #gradis {
+            height: 40px;
+            width: 220px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+
+        #keywordSelect {
+            height: 45px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #valueSelect1 {
+            height: 40px;
+            width: 190px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #valueSelect2 {
+            height: 40px;
+            width: 190px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #valueSelect3 {
+            height: 40px;
+            width: 190px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #valueSelect4 {
+            height: 40px;
+            width: 190px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #valueSelect5 {
+            height: 40px;
+            width: 190px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #valueSelect6 {
+            height: 40px;
+            width: 190px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #searchButton {
+            width: 50px;
+            border: 1px solid;
+            border-radius: 5px;
+            margin: 0 0 0 5px;
+
+        }
+
+        #searchButton:hover {
+            border: 2px solid #000080;
+            color: white;
+            font-weight: bold;
+            background-color: #000080;
+        }
+
+
+        #vsearchButton1 {
+            width: 50px;
+            border: 1px solid;
+            border-radius: 5px;
+            margin: 0 0 0 5px;
+
+        }
+
+        #vsearchButton1:hover {
+            border: 2px solid #000080;
+            color: white;
+            font-weight: bold;
+            background-color: #000080;
+        }
+
+
+
+        #send3 {
+            width: 150px;
+            border: 1px solid;
+            border-radius: 5px;
+            margin: 0 0 0 5px;
+            height: 20px;
+
+        }
+
+        #send3:hover {
+            border: 2px solid #000080;
+            color: white;
+            font-weight: bold;
+            background-color: #000080;
+        }
+
+        #vsearchButton2 {
+            width: 50px;
+            border: 1px solid;
+            border-radius: 5px;
+            margin: 0 0 0 5px;
+
+        }
+
+        #vsearchButton2:hover {
+            border: 2px solid #000080;
+            color: white;
+            font-weight: bold;
+            background-color: #000080;
+        }
+
+        #vsearchButton3 {
+            width: 50px;
+            border: 1px solid;
+            border-radius: 5px;
+            margin: 0 0 0 5px;
+
+        }
+
+        #vsearchButton3:hover {
+            border: 2px solid #000080;
+            color: white;
+            font-weight: bold;
+            background-color: #000080;
+        }
+
+        #vsearchButton4 {
+            width: 50px;
+            border: 1px solid;
+            border-radius: 5px;
+            margin: 0 0 0 5px;
+
+        }
+
+        #vsearchButton4:hover {
+            border: 2px solid #000080;
+            color: white;
+            font-weight: bold;
+            background-color: #000080;
+        }
+
+        #vsearchButton5 {
+            width: 50px;
+            border: 1px solid;
+            border-radius: 5px;
+            margin: 0 0 0 5px;
+
+        }
+
+        #vsearchButton5:hover {
+            border: 2px solid #000080;
+            color: white;
+            font-weight: bold;
+            background-color: #000080;
+        }
+
+        #vsearchButton6 {
+            width: 50px;
+            border: 1px solid;
+            border-radius: 5px;
+            margin: 0 0 0 5px;
+
+        }
+
+        #vsearchButton5:hover {
+            border: 2px solid #000080;
+            color: white;
+            font-weight: bold;
+            background-color: #000080;
+        }
+
+        #output {
+            font-size: 16px;
+        }
+
+        .feedback {
+
+            border: none;
+            background-color: lightblue;
+        }
+
+        .selfevacom {
+            display: flex;
+        }
+
+
+        #score {
+            height: 106px;
+            font-weight: bold;
+            font-size: 42px;
+            text-align: center;
+        }
+
+        #sdis {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            font-weight: normal;
+            padding: 0 0 0 10px;
+        }
+
+        .valuekpi {
+            font-size: 20px;
+            padding: 0 0 0 0;
+            margin: 10px 0 0 0;
+        }
+
+        .hosscore {
+            height: 40px;
+            width: 90px;
+            margin: 0 0 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="empwrapper">
+        <h1 class="empinf">評価者用評価シート</h1>
+
+        <div class="empde">
+            <p class="empname">従業員氏名</p>
+            <input type="name" id="searchInput" placeholder="キーワードを入力してください">
+            <p class="evaterm">評価対象期間</p>
+            <select id="keywordSelect">
+                <option value="">期間を選択してください</option>
+                <option value="2023年4月～2023年9月">2023年4月～2023年9月</option>
+                <option value="2023年10月～2024年3月">2023年10月～2024年3月</option>
+                <option value="2024年4月～2024年9月">2024年4月～2024年9月</option>
+                <option value="2024年10月～2025年3月">2024年10月～2025年3月</option>
+                <option value="2025年4月～2025年9月">2025年4月～2025年9月</option>
+                <option value="2025年10月～2026年3月">2025年10月～2026年3月</option>
+                <option value="2026年4月～2026年9月">2026年4月～2026年9月</option>
+                <option value="2026年10月～2027年3月">2026年10月～2027年3月</option>
+                <option value="2027年4月～2027年9月">2027年4月～2027年9月</option>
+                <option value="2027年10月～2028年3月">2027年10月～2028年3月</option>
+            </select>
+
+            <button id="searchButton">検索</button>
+
+            <p class="empname">所属部署</p>
+            <div id="sdis" class="sdis">
+                <p></p>
+            </div>
+
+            <p class="empname">グレード</p>
+            <div id="gradis" class="gradis">
+                <p></p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="selfevacom">
+        <div class="evaterm2">今期自己評価
+
+            <div class="selfeva2">
+                <ul id="output"></ul>
+            </div>
+
+        </div>
+        <div>
+            <p class="evaterm3">今期総合評価点</p>
+
+            <div id="score" class="selfeva3">
+                <p class="centered-text"></p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="valueele">
+
+        <p class="evaterm">前期目標設定＿バリュー項目</p>
+
+        <div class="valueelements">
+
+            <div class="vsele">
+                <div>
+                    <p class="valuekpi">KNOWLEDGE</p>
+                    <div id="kscore" class="hosscore">
+                        <p class="centered-text"></p>
+                    </div>
+                    <select id="valueSelect1">
+                        <option value="">期間を選択してください</option>
+                        <option value="文章作成力">文章作成力</option>
+                        <option value="テクニカルスキル">テクニカルスキル</option>
+                        <option value="ラーニングアジリティ">ラーニングアジリティ</option>
+                    </select>
+                    <button id="vsearchButton1">検索</button>
+                </div>
+
+                <div class="selfeva">
+                    <div class="postit">
+                        <ul id="output3"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vsele">
+                <div>
+                    <p class="valuekpi">INOVATION</p>
+
+                    <div id="iscore" class="hosscore">
+                        <p class="centered-text"></p>
+                    </div>
+                    <select id="valueSelect2">
+                        <option value="">期間を選択してください</option>
+                        <option value="企画発案力">企画発案力</option>
+                        <option value="問題定義と改善">問題定義と改善</option>
+                        <option value="探求心と追求心">探求心と追求心</option>
+                    </select>
+                    <button id="vsearchButton2">検索</button>
+                </div>
+
+                <div class="selfeva">
+                    <div class="postit">
+                        <ul id="output4"></ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="vsele">
+
+                <div>
+                    <p class="valuekpi">LEADERSHIP</p>
+
+                    <div id="lscore" class="hosscore">
+                        <p class="centered-text"></p>
+                    </div>
+                    <select id="valueSelect3">
+                        <option value="">期間を選択してください</option>
+                        <option value="ビジョニング力">ビジョニング力</option>
+                        <option value="目標設定と遂行力">目標設定と遂行力</option>
+                        <option value="影響力">影響力</option>
+                    </select>
+                    <button id="vsearchButton3">検索</button>
+                </div>
+
+                <div class="selfeva">
+                    <div class="postit">
+                        <ul id="output5"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vsele">
+                <div>
+                    <p class="valuekpi">FOLLOWERSHIP</p>
+
+                    <div id="fscore" class="hosscore">
+                        <p class="centered-text"></p>
+                    </div>
+
+                    <select id="valueSelect4">
+                        <option value="">期間を選択してください</option>
+                        <option value="翻訳力">翻訳力</option>
+                        <option value="プロジェクトマネジメント">プロジェクトマネジメント</option>
+                        <option value="チームマネジメント">チームマネジメント</option>
+                    </select>
+                    <button id="vsearchButton4">検索</button>
+
+                </div>
+                <div class="selfeva">
+                    <div class="postit">
+                        <ul id="output6"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vsele">
+                <div>
+                    <p class="valuekpi">HOSPITALITY</p>
+
+                    <div id="hscore" class="hosscore">
+                        <p class="centered-text"></p>
+                    </div>
+
+
+                    <select id="valueSelect5">
+                        <option value="">期間を選択してください</option>
+                        <option value="企画力">人財育成</option>
+                        <option value="問題定義と改善">メンバーシップ</option>
+                        <option value="探求心と追求心">セルフマネジメント</option>
+                    </select>
+                    <button id="vsearchButton5">検索</button>
+                </div>
+
+                <div class="selfeva">
+                    <div class="postit">
+                        <ul id="output7"></ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="vsele">
+
+                <div>
+                    <p class="valuekpi">FLEXIBILITY</p>
+                    <div id="flscore" class="hosscore">
+                        <p class="centered-text"></p>
+                    </div>
+                    <select id="valueSelect6">
+                        <option value="">期間を選択してください</option>
+                        <option value="現場力">現場力</option>
+                        <option value="トラブル対応力">トラブル対応力</option>
+                        <option value="クライアント対応力">クライアント対応力</option>
+                    </select>
+
+                    <button id="vsearchButton6">検索</button>
+                </div>
+
+                <div class="selfeva">
+                    <div class="postit">
+                        <ul id="output8"></ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <p class="evaterm">評価フィードバック</p>
+
+        <div class="valueelements2">
+
+            <div class="vsele">
+                <div>
+
+                    <div class="selfeva2">
+                        <div class="postit">
+                            <input type="feedback">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button id="send3">send</button>
+                </div>
+            </div>
+
+            <!-- HTML内のDeleteボタン -->
+
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script>
+                // 日時をいい感じの形式にする関数
+                function convertTimestampToDatetime(timestamp) {
+                    const _d = timestamp ? new Date(timestamp * 1000) : new Date();
+                    const Y = _d.getFullYear();
+                    const m = (_d.getMonth() + 1).toString().padStart(2, '0');
+                    const d = _d.getDate().toString().padStart(2, '0');
+                    const H = _d.getHours().toString().padStart(2, '0');
+                    const i = _d.getMinutes().toString().padStart(2, '0');
+                    const s = _d.getSeconds().toString().padStart(2, '0');
+                    return `${Y}/${m}/${d} ${H}:${i}:${s}`;
+                }
+            </script>
+
+
+
+            <!-- 以下にfirebaseのコードを貼り付けよう -->
+
+
+            <script type="module">
+
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+
+                import {
+                    getFirestore,
+                    collection,
+                    addDoc,
+                    serverTimestamp,
+                    query,
+                    orderBy,
+                    onSnapshot,
+                    where,
+                } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+
+
+
+                const firebaseConfig = {
+                    apiKey: "AIzaSyA8p9igB4aI27AdtDu7Zvueh4iX4qVRmXo",
+                    authDomain: "chatapp-miki.firebaseapp.com",
+                    projectId: "chatapp-miki",
+                    storageBucket: "chatapp-miki.appspot.com",
+                    messagingSenderId: "788466822293",
+                    appId: "1:788466822293:web:34b4a1e607732c8e357f9c"
+                };
+
+                const app = initializeApp(firebaseConfig);
+                const db = getFirestore(app);
+
+
+                // chatapp.html
+
+
+                // データ取得処理
+                const q = query(collection(db, "chat"), orderBy("time", "desc"));
+
+                onSnapshot(q, (querySnapshot) => {
+                    const documents = [];
+                    querySnapshot.docs.forEach(function (doc) {
+                        const document = {
+                            id: doc.id,
+                            data: doc.data(),
+                        };
+                        documents.push(document);
+                    });
+                    console.log(documents);
+
+                    //  ここまでは毎回同じ
+
+
+                    // 検索ボタンのクリックイベントハンドラ
+                    $("#searchButton").on("click", function () {
+                        // 入力されたキーワードを取得
+                        const keyword = $("#searchInput").val();
+                        const selectedTerm = $("#keywordSelect option:selected").val();
+
+                        // Firestore のデータを検索
+                        searchDocuments(keyword, selectedTerm);
+                        console.log(documents);
+
+                    });
+
+                    // ドキュメントを検索して表示する関数
+                    function searchDocuments(keyword, selectedTerm) {
+                        const htmlElements = [];
+                        documents.forEach(function (document) {
+                            const time = document.data.time && document.data.time.seconds ? convertTimestampToDatetime(document.data.time.seconds) : "";
+                            const documentTerm = document.data.term;
+
+                            console.log("documentTerm:", documentTerm); // 追加
+                            if (document.data.name && document.data.name.includes(keyword) && documentTerm === selectedTerm) {
+
+
+                                htmlElements.push(`
+            <li id="${document.id}">
+                <p>所属部署：${document.data.grade}</p>  
+                <p>${document.data.text}</p>  
+              
+          
+            </li>
+            `);
+                                const tavgValue = document.data.tavg;
+                                $("#score").text(tavgValue);
+                                const secValue = document.data.section;
+                                $("#sdis").text(secValue);
+                                const graValue = document.data.grade;
+                                $("#gradis").text(graValue);
+
+
+                            }
+                        });
+
+                        $("#output").html(htmlElements);
+                    }
+                })
+
+
+
+
+                // データ取得処理
+                const r = query(collection(db, "chat"), orderBy("time", "desc"));
+
+                onSnapshot(r, (querySnapshot) => {
+
+                    const documents = [];
+                    querySnapshot.docs.forEach(function (doc) {
+                        const document = {
+                            id: doc.id,
+                            data: doc.data(),
+                        };
+                        documents.push(document);
+                    });
+
+                    console.log(documents);
+
+                    //  ここまでは毎回同じ
+
+
+
+
+
+                    // 検索ボタンのクリックイベントハンドラ
+                    $("#vsearchButton1").on("click", function () {
+
+                        const keyword2 = $("#searchInput").val();
+                        const selectedTerm2 = $("#valueSelect1 option:selected").val();
+
+                        // Firestore のデータを検索
+                        searchDocuments(keyword2, selectedTerm2);
+                        console.log(documents);
+
+                    });
+
+                    // ドキュメントを検索して表示する関数
+                    function searchDocuments(keyword2, selectedTerm2) {
+                        const htmlElements2 = [];
+                        documents.forEach(function (document) {
+                            const time = document.data.time && document.data.time.seconds ? convertTimestampToDatetime(document.data.time.seconds) : "";
+                            const documentTerm2 = document.data.kno;
+
+                            console.log("documentTerm2:", documentTerm2); // 追加
+                            if (documentTerm2 === selectedTerm2) {
+                                if (document.data.name && document.data.name.includes(keyword2)) {
+                                    htmlElements2.push(`
+                    <li id="${document.id}">
+            
+                        <p>${document.data.ktext}</p>
+                
+                    </li>
+            `);
+                                }
+                            }
+                        });
+
+                        const output3Element = $("#output3");
+                        if (output3Element.length) {
+                            output3Element.html(htmlElements2.join(''));
+                        } else {
+                            console.log("Output3 element not found.");
+                        }
+
+                    }
+                })
+
+
+
+                // データ取得処理
+                const s = query(collection(db, "chat"), orderBy("time", "desc"));
+
+                onSnapshot(s, (querySnapshot) => {
+
+                    const documents = [];
+                    querySnapshot.docs.forEach(function (doc) {
+                        const document = {
+                            id: doc.id,
+                            data: doc.data(),
+                        };
+                        documents.push(document);
+                    });
+
+                    console.log(documents);
+
+                    // 検索ボタンのクリックイベントハンドラ
+                    $("#vsearchButton2").on("click", function () {
+
+                        const keyword3 = $("#searchInput").val();
+                        const selectedTerm3 = $("#valueSelect2 option:selected").val();
+
+                        // Firestore のデータを検索
+                        searchDocuments(keyword3, selectedTerm3);
+                        console.log(documents);
+
+                    });
+
+                    // ドキュメントを検索して表示する関数
+                    function searchDocuments(keyword3, selectedTerm3) {
+                        const htmlElements3 = [];
+                        documents.forEach(function (document) {
+                            const time = document.data.time && document.data.time.seconds ? convertTimestampToDatetime(document.data.time.seconds) : "";
+                            const documentTerm3 = document.data.ino;
+
+                            console.log("documentTerm3:", documentTerm3); // 追加
+                            if (documentTerm3 === selectedTerm3) {
+                                if (document.data.name && document.data.name.includes(keyword3)) {
+                                    htmlElements3.push(`
+                    <li id="${document.id}">
+                        <p>${document.data.itext}</p>
+                
+                    </li>
+            `);
+                                }
+                            }
+                        });
+
+                        const output4Element = $("#output4");
+                        if (output4Element.length) {
+                            output4Element.html(htmlElements3.join(''));
+                        } else {
+                            console.log("Output4 element not found.");
+                        }
+
+                    }
+                })
+
+            </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

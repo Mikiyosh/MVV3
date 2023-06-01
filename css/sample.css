@@ -44,7 +44,10 @@ h2 {
 .maintitle {
     width: 100%;
     text-align: right;
+
 }
+
+
 
 .mission {
     color: rgb(232, 144, 20);
@@ -194,8 +197,6 @@ h2 {
 
 }
 
-.sheet {}
-
 .whole_wrapper {
     display: flex;
     padding: 0 0;
@@ -210,9 +211,23 @@ ul {
 }
 
 li {
-    margin: 0 0 7px 0;
-    display: flex;
+    padding: 0 0 12px 0;
+}
 
+.topname {
+    border-left: 3px solid red;
+    text-align: left;
+    font-weight: bold;
+}
+
+.topname2 {
+    border-left: 3px solid blue;
+    text-align: left;
+    font-weight: bold;
+}
+
+.postit {
+    background-color: white;
 }
 
 .kbtn {
@@ -671,7 +686,6 @@ li {
     width: 200px;
     padding: 0 0 30px 0;
     margin-left: auto;
-
     font-size: 30px;
     font-weight: bold;
     display: block;
@@ -890,11 +904,7 @@ input[type*="radio"]:checked {
     height: 20x;
 }
 
-/* * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-} */
+
 
 .content {
     margin: 0 auto;
@@ -943,7 +953,7 @@ input[type*="radio"]:checked {
 
 .box2 {
     width: 300px;
-    height: 630px;
+    height: 430px;
     font-size: 12px;
     font-weight: bold;
     color: Dark gray;
@@ -975,4 +985,302 @@ input[type*="radio"]:checked {
     padding-bottom: 2px;
 
     background-color: rgba(241, 241, 241, 0.872);
+}
+
+
+
+.wholeform {
+    text-align: center;
+}
+
+.ev_form {
+    text-align: right;
+    padding: 0 420px 0 0;
+
+
+}
+
+
+#name {
+    height: 30px;
+    padding: 0 5px;
+    width: 400px;
+}
+
+#name2 {
+    height: 30px;
+    padding: 0 5px;
+    width: 400px;
+}
+
+#text {
+    height: 30px;
+    padding: 0 5px;
+    width: 400px;
+}
+
+#text2 {
+    height: 200px;
+    padding: 0 5px;
+    padding-top: 00;
+    width: 400px;
+
+}
+
+#term {
+    height: 30px;
+    padding: 0 5px;
+    margin: 0 0 10px 0;
+    width: 400px;
+
+}
+
+
+
+.formname,
+.formsection,
+.formselfeva {
+
+    margin-bottom: 10px;
+    /* 枠と枠の間の垂直方向の感覚を5px空ける */
+}
+
+.formname input,
+.formsection input,
+.formselfeva input {
+    margin-left: 10px;
+    padding: 0 5px;
+}
+
+.formname2,
+.formsection,
+.formselfeva {
+
+    margin-bottom: 10px;
+    /* 枠と枠の間の垂直方向の感覚を5px空ける */
+}
+
+.formname2 input,
+.formsection input,
+.formselfeva input {
+    margin-left: 10px;
+    padding: 0 5px;
+}
+
+
+.formselfeva {
+    margin: auto;
+
+}
+
+.formselfeva2 input {
+    margin: auto;
+    height: 200px;
+
+}
+
+button {
+    margin-top: 15px;
+    /* ボタンと最後の枠の間の垂直方向の感覚を5px空ける */
+}
+
+.ktext {
+    width: 150px;
+    height: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#kno {
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#ino {
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#lea {
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#fol {
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#hos {
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#fle {
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#ktext {
+    margin: 5px 0 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#itext {
+    margin: 5px 0 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#ltext {
+    margin: 5px 0 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#ftext {
+    margin: 5px 0 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#htext {
+    margin: 5px 0 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#fltext {
+    margin: 5px 0 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#section {
+    margin: 5px 8px 3px 0;
+    height: 36.78px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#grade {
+    margin: 5px 0 12px 0;
+    height: 36.78px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#term {
+    width: 413.56px;
+    height: 36.75px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 0 15px 0;
+}
+
+#name {
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 0 5px 0;
+}
+
+#name2 {
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 0 5px 0;
+}
+
+#text {
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pulld {
+    display: flex;
+    margin: 0 0 0 417px;
+}
+
+#send {
+    width: 150px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 15px 125px 0 5px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+#send:hover {
+    border: 2px solid #000080;
+    color: white;
+    font-weight: bold;
+    background-color: #000080;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#send2 {
+    width: 150px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 15px 125px 0 8px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+#send2:hover {
+    border: 2px solid #000080;
+    color: white;
+    font-weight: bold;
+    background-color: #000080;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#section2 {
+    margin: 5px 8px 3px 0;
+    height: 36.78px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#grade2 {
+    margin: 5px 0 12px 0;
+    height: 36.78px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#term2 {
+    width: 413.56px;
+    height: 36.75px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 0 15px 0;
+}
+
+
+
+#text2 {
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 200px;
 }
