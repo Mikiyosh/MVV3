@@ -62,7 +62,7 @@ h2 {
 
 
 .mission_wrapper {
-    padding: 15 px 0 20px 0;
+    padding: 45px 0 20px 0;
 }
 
 .vision_wrapper {
@@ -79,7 +79,7 @@ h2 {
 }
 
 .eva_sheet {
-    padding: 60px 0 5px 0;
+    padding: 30px 0 5px 0;
     font-size: 24px;
     font-weight: bold;
 }
@@ -96,6 +96,30 @@ h2 {
 }
 
 
+.kno_div {
+    width: 180px;
+}
+
+.ino_div {
+    width: 180px;
+}
+
+
+.fol_div {
+    width: 180px;
+}
+
+.le_div {
+    width: 180px;
+}
+
+.hos_div {
+    width: 180px;
+}
+
+.fle_div {
+    width: 180px;
+}
 
 
 
@@ -199,7 +223,8 @@ h2 {
 
 .whole_wrapper {
     display: flex;
-    padding: 0 0;
+    padding: 0 5px 0 5px;
+    width: 1210px;
 }
 
 ul {
@@ -294,7 +319,7 @@ li {
 .ad2 {
     font-size: 10px;
     padding: 5px 5px 5px 5px;
-
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -346,7 +371,7 @@ li {
 
 
 .kno_box {
-    width: 300px;
+    width: 280px;
     height: 450px;
     font-size: 12px;
     font-weight: bold;
@@ -357,6 +382,7 @@ li {
     flex-direction: column;
     text-align: center;
     padding: 0 5px 0 5px;
+    border-radius: 5px;
 }
 
 .fh {
@@ -366,7 +392,7 @@ li {
 }
 
 .box2 {
-    width: 300px;
+    width: 280px;
     height: 600px;
     font-size: 12px;
     font-weight: bold;
@@ -377,10 +403,26 @@ li {
     flex-direction: column;
     text-align: center;
     padding: 0 5px 0 5px;
+    border-radius: 5px;
+}
+
+.box3 {
+    width: 280px;
+    height: 325px;
+    font-size: 12px;
+    font-weight: bold;
+    color: Dark gray;
+    background-color: white;
+    margin: 0 5px 5px 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 5px 0 5px;
+    border-radius: 5px;
 }
 
 .ino_box {
-    width: 300px;
+    width: 280px;
     height: 450px;
     font-size: 12px;
     font-weight: bold;
@@ -390,11 +432,12 @@ li {
     display: flex;
     flex-direction: column;
     padding: 0 5px 0 5px;
+    border-radius: 5px;
 }
 
 
 .le_box {
-    width: 300px;
+    width: 280px;
     height: 450px;
     font-size: 12px;
     font-weight: bold;
@@ -404,12 +447,13 @@ li {
     display: flex;
     flex-direction: column;
     padding: 0 5px 0 5px;
+    border-radius: 5px;
 }
 
 
 
 .fol_box {
-    width: 300px;
+    width: 280px;
     height: 450px;
     font-size: 12px;
     font-weight: bold;
@@ -419,10 +463,11 @@ li {
     display: flex;
     flex-direction: column;
     padding: 0 5px 0 5px;
+    border-radius: 5px;
 }
 
 .fle_box {
-    width: 300px;
+    width: 280px;
     height: 450px;
     font-size: 12px;
     font-weight: bold;
@@ -432,12 +477,13 @@ li {
     display: flex;
     flex-direction: column;
     padding: 0 5px 0 5px;
+    border-radius: 5px;
 }
 
 
 
 .hos_box {
-    width: 300px;
+    width: 270px;
     height: 450px;
     font-size: 12px;
     font-weight: bold;
@@ -447,6 +493,7 @@ li {
     display: flex;
     flex-direction: column;
     padding: 0 5px 0 5px;
+    border-radius: 5px;
 }
 
 
@@ -466,7 +513,14 @@ li {
 
 .evasheet_wrapper {
     background-color: rgba(241, 241, 241, 0.872);
-    padding: 0 0 30px;
+    padding: 0 0 30px 0;
+    margin: 0 15px;
+}
+
+.evasheet_wrapper2 {
+    background-color: rgba(241, 241, 241, 0.872);
+    padding: 0 0 30px 0;
+    margin: 30px 15px;
 }
 
 .space {
@@ -684,17 +738,16 @@ li {
 
 .value {
     width: 200px;
-    padding: 0 0 30px 0;
+    padding: 20px 5px 30px 0;
     margin-left: auto;
     font-size: 30px;
     font-weight: bold;
     display: block;
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-
     color: #0066cc;
 
 }
@@ -995,7 +1048,7 @@ input[type*="radio"]:checked {
 
 .ev_form {
     text-align: right;
-    padding: 0 420px 0 0;
+    padding: 0 405px 0 0;
 
 
 }
@@ -1011,6 +1064,18 @@ input[type*="radio"]:checked {
     height: 30px;
     padding: 0 5px;
     width: 400px;
+}
+
+
+
+#name3 {
+    height: 30px;
+    padding: 0 5px;
+    width: 400px;
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 0 0 0;
 }
 
 #text {
@@ -1070,11 +1135,23 @@ input[type*="radio"]:checked {
 
 .formselfeva {
     margin: auto;
+}
+
+.formselfeva1 {
+    margin: auto;
+    text-align: right;
+    padding: 0 10px 0 0;
+
 
 }
 
+
+
+
+
+
 .formselfeva2 input {
-    margin: auto;
+    width: 150px;
     height: 200px;
 
 }
@@ -1086,7 +1163,7 @@ button {
 
 .ktext {
     width: 150px;
-    height: 250px;
+    height: 200px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -1131,40 +1208,140 @@ button {
     margin: 5px 0 0 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 175px;
 }
 
 #itext {
     margin: 5px 0 0 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 175px;
+}
+
+#ktext2 {
+    margin: 5px 0 0 125px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+
+    /* 右詰めに配置 */
+}
+
+#itext2 {
+    margin: 5px 0 0 125px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+
+#ktext3 {
+    margin: 5px 0 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 180px;
+}
+
+#itext3 {
+    margin: 5px 0 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 180px;
+
 }
 
 #ltext {
     margin: 5px 0 0 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 175px;
+}
+
+#ltext2 {
+    margin: 5px 0 0 125px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+#ltext3 {
+    margin: 5px 0 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 180px;
 }
 
 #ftext {
     margin: 5px 0 0 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 175px;
+}
+
+#ftext2 {
+    margin: 5px 0 0 125px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+#ftext3 {
+    margin: 5px 0 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 180px;
 }
 
 #htext {
     margin: 5px 0 0 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 175px;
+}
+
+#htext2 {
+    margin: 5px 0 0 125px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+#htext3 {
+    margin: 5px 0 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 180px;
 }
 
 #fltext {
     margin: 5px 0 0 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 175px;
+}
+
+#fltext2 {
+    margin: 5px 0 0 125px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+#fltext3 {
+    margin: 5px 0 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 180px;
 }
 
 #section {
-    margin: 5px 8px 3px 0;
+    margin: 5px 8px 3px -30px;
     height: 36.78px;
 
     border: 1px solid #ccc;
@@ -1202,6 +1379,7 @@ button {
 }
 
 #text {
+
     height: 200px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -1209,7 +1387,7 @@ button {
 
 .pulld {
     display: flex;
-    margin: 0 0 0 417px;
+    margin: 0 0 0 435px;
 }
 
 #send {
@@ -1252,10 +1430,64 @@ button {
     border-radius: 5px;
 }
 
+
+#evaresult {
+    width: 150px;
+    border: 1px solid;
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+
+
+#evaresult:hover {
+    border: 2px solid #000080;
+    color: white;
+    font-weight: bold;
+    background-color: #000080;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+
+}
+
+#evaresult2 {
+    width: 150px;
+    border: 1px solid;
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+
+
+#evaresult2:hover {
+    border: 2px solid #000080;
+    color: white;
+    font-weight: bold;
+    background-color: #000080;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+
+}
+
 #section2 {
-    margin: 5px 8px 3px 0;
+    margin: 5px 8px 3px -30px;
     height: 36.78px;
 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#section3 {
+    margin: 5px 8px 10px -12px;
+    height: 36.78px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -1276,6 +1508,13 @@ button {
     margin: 0 0 15px 0;
 }
 
+#term3 {
+    width: 413.56px;
+    height: 36.75px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0px 0 10px 40px;
+}
 
 
 #text2 {
@@ -1283,4 +1522,78 @@ button {
     border: 1px solid #ccc;
     border-radius: 5px;
     height: 200px;
+}
+
+
+.selectbtn {
+    width: 150px;
+    margin: 10px 10px 0 0px;
+
+}
+
+.selectbtns {
+    display: flex;
+    margin: 0 0 10px 750px;
+}
+
+.bner {
+    color: white;
+    font-weight: bold;
+    background-color: white;
+    border: none;
+    /* 枠線をなくす */
+    border-bottom: 1px solid #ccc;
+    /* 下線を追加 */
+    background-color: rgba(241, 241, 241, 0.872);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
+    margin-top: -1px;
+    /* 上部の余白をなくす */
+    padding-top: 0;
+    /* 上部の余白をなくす */
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+    font-size: 12px;
+}
+
+a:hover {
+    color: #0066cc;
+    font-weight: bold;
+    font-weight: bold;
+
+}
+
+.js-modal-open {
+    font-size: 12px;
+    line-height: 1;
+}
+
+#kscore {
+    height: 40px;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+}
+
+.hosscore {
+    height: 40px;
+    width: 90px;
+    margin: 0 0 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.feedbackf {
+    width: 550px;
+    height: 200px;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.return-btn2 {
+    padding: 5px 183px 0 0;
 }
