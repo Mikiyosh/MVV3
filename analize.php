@@ -888,11 +888,7 @@ fclose($file);
 
 
 
-  fieldset{
-    background-color:white;
-    height:350px;
-    weight:200px;
-  }
+ 
 
   .ekfwrapper{
     display: flex;
@@ -928,8 +924,16 @@ font-weight: bold;
 fieldset{
 border: none;
 margin:0 20px 0 0;
-height: 300px;
-}
+background-color:white;
+height:550px;
+
+  }
+
+  .chartbox2{
+    width:300px;
+  }
+
+
 
 legend{
   padding: 45px 0 0 0;
@@ -957,45 +961,57 @@ padding:10px 0 0 5px;
 }
 
 .ekfwrapperana{
-width: 992px;
-margin:auto;
+width: 1000px;
+margin:50px 0 0 0;
 padding: 0 0 0 30px;
-  display:flex;
+display:flex;
 
 }
 
 #term{
   width:180px;
   height:25px;
-  margin:0 0 5px 420px;
+  margin:0 0 5px 55px;
+}
+
+#element{
+  width:180px;
+  height:25px;
+  margin:0 0 5px 15px;
+}
+
+#element2{
+  width:180px;
+  height:25px;
+  margin:0 0 5px 15px;
 }
 
 #department{
   width:180px;
   height:25px;
-   margin:0 0 5px 0;
+  margin:0 0 5px 55px;
 }
 
 #grade{
   width:180px;
   height:25px;
-  margin:0 0 5px 45px;
+  margin:0 0 5px 15px;
 }
 
 #age{
   width:180px;
   height:25px;
-   margin:0 0 5px 0;
+   margin:0 0 5px 55px;
 }
 
 #gender{
   width:180px;
   height:25px;
-  margin:0 0 5px 45px;
+  margin:0 0 5px 15px;
 }
 
-#calculate_button{
-margin:0 0 0 3px;
+#calculate_button1{
+margin:0 0 0 258px;
   width:85px;
 
 }
@@ -1016,39 +1032,38 @@ width:85px;
 #department2{
   width:180px;
   height:25px;
-   margin:0 0 5px 0;
+   margin:0 0 5px 45px;
 }
 
 #grade2{
   width:180px;
   height:25px;
-   margin:0 0 5px 0;
-     margin:0 0 5px 45px;
+  margin:0 0 5px 15px;
 
 }
 
 #age2{
   width:180px;
   height:25px;
-   margin:0 0 5px 0;
+   margin:0 0 5px 45px;
 }
 
 #gender2{
   width:180px;
   height:25px;
-   margin:0 0 5px 0;
-     margin:0 0 5px 45px;
+  margin:0 0 5px 15px;
 
 }
 
 #calculate_button2{
-margin:0 0 0 3px;
-  width:85px;
+margin:0 0 0 250px;
+width:85px;
 
 }
 
 #cash_button2{
 width:85px;
+
 
 }
 
@@ -1060,6 +1075,11 @@ width:85px;
 .form-group{
   margin: 0 0 0 405px;
 }
+
+.ekfsize{
+  width:500px;
+}
+
 </style>
 <head>
 
@@ -1074,19 +1094,20 @@ width:85px;
 
         <div class="forflrex2">
                <h1 class="empinf2">ダッシュボード</h1>
-       
         </div>
+    </div>
 
-
-        <div class="virtical">
+    <div class="virtical">
 
             <div class="btnwrapper">
                 <div class="button-054">
                     <a href="sum.php" class="">サーベイサマリー</a>
                 </div>
+
                 <div class="button-054">
                     <a href="sv_read.php" class="">EKF</a>
                 </div>
+                
                 <div class="button-054">
                     <a href="" class="">EEI</a>
                 </div>
@@ -1094,169 +1115,177 @@ width:85px;
                 <div class="button-054">
                     <a href="" class="">eNPS</a>
                 </div>
-                      <div class="button-054">
-                    <a href="" class="">PSI</a>
+
+                <div class="button-054">
+                    <a href="" class="">分析</a>
                 </div>
 
-                   <div class="button-054">
-                    <a href="analize.php" class="">分析</a>
-                </div>
-
-                  <div class="button-054">
+                <div class="button-054">
                     <a href="sv_input.php" class="">サーベイフォーム</a>
                 </div>           
             </div>
-<div>
-<div class="ekfcon">
-  <p class="texttitle">What is EKF (Engagement Key Factors)?</p>
-<p class="textcon">
-Engagement Key Factorsは、以下の5つの要素で構成されています。
-
-これらの要素は、さまざまな質問を用いて測定されています。
-
-最終的なEKFスコアは、6つのファクターすべての平均スコアを取ることで算出されます。</p>
-</div>
-
-<select id="term" class="form-group" name="term" type="text">
-  <option value="">実施年を選択してください</option>
-  <option value="二十年">2020年</option>
-  <option value="二十一年">2021年</option>
-  <option value="二十二年">2022年</option>
-  <option value="二十三年">2023年</option>
-</select>
-
-<button id="term_button" onclick="calculateAverage()">分析する</button>
-
-
-
-<div>
-
-
-    <div class="tscore">
-
-      <p class="score">TOTAL SCORE</p>
-      <p id="total_score">Total Score</p>
-
-    <div class="tscorede">
-      <canvas id="chartT"></canvas>
-    </div>
-  
-    </div>
-
-</div>
-
-
-<div class="ekfwrapper">
-  <fieldset>  
-    <table>
-     
-      <thead>
-           <legend>EKF＿人間関係</legend>
-        <tr>
-          <th>詳細</th>
-        </tr>
-      </thead>
-
-      <tbody>
-
-<p id="r_result">Score</p>
-      </tbody>
-          <div class="chartbox2">
-        <canvas id="chartR"></canvas>
-</div>
-
-        </table>
-  </fieldset>
-
-  
-   <fieldset>
-    <table>
-          <legend>EKF＿仕事要因</legend>
-      <thead>
-        <tr>
-          <th>詳細</th>
-        </tr>
-      </thead>
-
-      <tbody>
-
-<p id="j_result">Score</p>
-      </tbody>
-          <div class="chartbox2">
-        <canvas id="chartJ"></canvas>
-</div>
-        </table>
-  </fieldset>
-
-
-   <fieldset>
-    <table>
-        <legend>EKF＿組織</legend>
-      <thead>
-        <tr>
-          <th>詳細</th>
-        </tr>
-      </thead>
-
-      <tbody>
-
-<p id="o_result">Score</p>
-      </tbody>
-          <div class="chartbox2">
-        <canvas id="chartO"></canvas>
-</div>
-
-        </table>
-  </fieldset> 
-</div>
-
-
-<div class="ekfwrapper2">
-   <fieldset>
-    <table>
-        <legend>EKF＿評価</legend>
-      <thead>
-        <tr>
-          <th>詳細</th>
-        </tr>
-      </thead>
-
-      <tbody>
-
-<p id="e_result">Score</p>
-      </tbody>
-          <div class="chartbox2">
-        <canvas id="chartE"></canvas>
-</div>
-
-        </table>
-  </fieldset>
-
- 
-   <fieldset>
-    <legend>EKF＿育成</legend>
-    <table>
-      <thead>
-        <tr>
-          <th>詳細</th>
-        </tr>
-      </thead>
-
-      <tbody>
-
-<p id="d_result">Score</p>
-      </tbody>
-          <div class="chartbox2">
-        <canvas id="chartD"></canvas>
-</div>
-
-        </table>
-  </fieldset>
-</div>
+         
+           
 
 
 
 
+      <div class="ekfwrapperana">
+
+          <div class="ekfsize">
+              <fieldset>
+                <legend>survay＿details</legend>
+                <select id="term">
+                  <option value="">実施年を選んでください</option>
+                  <option value="二十年">2020年</option>
+                  <option value="二十一年">2021年</option>
+                  <option value="二十二年">2022年</option>
+                  <option value="二十三">2023年</option>
+                </select>
+
+                <select id="element">
+                  <option value="">要因を選んでください</option>
+                  <option value="relationshipscore">人間関係</option>
+                  <option value="jobscore">仕事要因</option>
+                  <option value="organizationscore">組織要因</option>
+                  <option value="evaluationscore">評価・報酬</option>
+                  <option value="developmentscore">成長</option>
+                </select>
+
+                <select id="department">
+                  <option value="">部署を選んでください</option>
+                  <option value="all">all</option>
+                  <option value="総務">総務</option>
+                  <option value="人事">人事</option>
+                  <option value="営業">営業</option>
+                </select>
+
+                <select id="grade">
+                  <option value="">職位を選んでください</option>
+                  <option value="all">all</option>
+                  <option value="一般">一般</option>
+                  <option value="リーダー">リーダー</option>
+                  <option value="マネージャー">マネージャー</option>
+                </select>
+
+                <select id="age">
+                  <option value="">年齢を選んでください</option>
+                  <option value="all">all</option>
+                  <option value="二十代">20代</option>
+                  <option value="三十代">30代</option>
+                  <option value="四十代">40代</option>
+                  <option value="五十代">50代</option>
+                  <option value="六十代">60代</option>
+                </select>
+
+                <select id="gender">
+                  <option value="">性別を選んでください</option>
+                  <option value="all">all</option>
+                  <option value="男性">男性</option>
+                  <option value="女性">女性</option>
+                  <option value="その他">その他</option>
+                </select>
+                <button id="calculate_button1" onclick="calculateAverage1()">分析</button> <button id="cash_button">リセット</button>
+
+                <table>
+                  <thead>
+                    <tr>
+                      <th></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <p id="de_result">スコア</p>
+                  </tbody>
+
+                  <div class="chartbox2">
+                    <canvas id="chartDe"></canvas>
+                  </div>
+
+                </table>
+              </fieldset>
+            </div>
+
+            <div class="ekfsize">
+
+              <fieldset>
+                <legend>EKF＿comparison</legend>
+                
+              <select id="term2">
+                <option value="">実施年を選んでください</option>
+                <option value="二十年">2020年</option>
+                <option value="二十一年">2021年</option>
+                <option value="二十二年">2022年</option>
+                <option value="二十三">2023年</option>
+              </select>
+
+              <select id="element2">
+                <option value="">要因を選んでください</option>
+                <option value="relationshipscore">人間関係</option>
+                <option value="jobscore">仕事要因</option>
+                <option value="organizationscore">組織要因</option>
+                <option value="evaluationscore">評価・報酬</option>
+                <option value="developmentscore">成長</option>
+              </select>
+
+              <select id="department2">
+                <option value="">部署を選んでください</option>
+                <option value="all">all</option>
+                <option value="総務">総務</option>
+                <option value="人事">人事</option>
+                <option value="営業">営業</option>
+              </select>
+
+              <select id="grade2">
+                <option value="">職位を選んでください</option>
+                <option value="all">all</option>
+                <option value="一般">一般</option>
+                <option value="リーダー">リーダー</option>
+                <option value="マネージャー">マネージャー</option>
+              </select>
+
+              <select id="age2">
+                <option value="">年齢を選んでください</option>
+                <option value="all">all</option>
+                <option value="二十代">20代</option>
+                <option value="三十代">30代</option>
+                <option value="四十代">40代</option>
+                <option value="五十代">50代</option>
+                <option value="六十代">60代</option>
+              </select>
+
+              <select id="gender2">
+                <option value="">性別を選んでください</option>
+                <option value="all">all</option>
+                <option value="男性">男性</option>
+                <option value="女性">女性</option>
+              </select>
+
+            <button id="calculate_button2" onclick="calculateAverage2()">分析</button>   <button id="cash_button2">リセット</button>
+                
+              <table>
+                  <thead>
+                    <tr>
+                      <th></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                  <p id="con_result">スコア</p>
+                  </tbody>
+
+                    <div class="chartbox2">
+                    <canvas id="chartCon"></canvas>
+                    </div>
+
+              </table>
+              </fieldset>
+
+            </div>
+
+          </div>
+        </div>
+      
 
   <script>
   
@@ -1265,332 +1294,31 @@ Engagement Key Factorsは、以下の5つの要素で構成されています。
 let array = <?= json_encode($array) ?>;
 console.log(array);
 
-function calculateAverage() {
-  // 選択した期間を取得
-  const selectedTerm = document.getElementById("term").value;
-
-
-let rArray = [];
-let rSum = 0;
-
-for (let i = 0; i < array.length; i++) {
-  const element = array[i];
- if (element.includes("relationshipscore:") && element.includes(selectedTerm)) {
-       const numbers = element.match(/\d+(\.\d+)?/g); // 正規表現で数字のみを抽出
-    if (numbers) {
-      const parsedNumbers = numbers.map(Number);
-      rArray = parsedNumbers;
-      rSum = rArray.reduce((total, num) => total + num, 0);
-      break; // "r"の配列を見つけたらループを終了
-    }
-  }
-}
-
-const rAverage = rSum / rArray.length;
-console.log("人間関係のスコア: " + rAverage);
-
-const rResultElement = document.getElementById("r_result");
-rResultElement.textContent = "Score: " + rAverage;
-
-
-let jArray = [];
-let jSum = 0;
-for (let i = 0; i < array.length; i++) {
-  const element = array[i];
-  if (element.includes("jobscore:")&& element.includes(selectedTerm)) {
-    const numbers = element.match(/\d+(\.\d+)?/g); // 正規表現で数字のみを抽出
-    if (numbers) {
-      const parsedNumbers = numbers.map(Number);
-      jArray = parsedNumbers;
-      jSum = jArray.reduce((total, num) => total + num, 0);
-      break; // "j"の配列を見つけたらループを終了
-    }
-  }
-}
-
-const jAverage = jSum / jArray.length;
-console.log("仕事要因のスコア: " + jAverage);
-
-const jResultElement = document.getElementById("j_result");
-jResultElement.textContent = "Score: " + jAverage;
-
-
-let oArray = [];
-let oSum = 0;
-for (let i = 0; i < array.length; i++) {
-  const element = array[i];
-  if (element.includes("organizationscore:")&& element.includes(selectedTerm)) {
-    const numbers = element.match(/\d+(\.\d+)?/g); // 正規表現で数字のみを抽出
-    if (numbers) {
-      const parsedNumbers = numbers.map(Number);
-      oArray = parsedNumbers;
-      oSum = oArray.reduce((total, num) => total + num, 0);
-      break; // "o"の配列を見つけたらループを終了
-    }
-  }
-}
-
-const oAverage = oSum / oArray.length;
-console.log("組織要因の数値のスコア: " + oAverage);
-
-const oResultElement = document.getElementById("o_result");
-oResultElement.textContent = "Score: " + oAverage;
-
-
-
-
-
-let eArray = [];
-let eSum = 0;
-for (let i = 0; i < array.length; i++) {
-  const element = array[i];
-  if (element.includes("evaluationscore:")&& element.includes(selectedTerm)) {
-    const numbers = element.match(/\d+(\.\d+)?/g); // 正規表現で数字のみを抽出
-    if (numbers) {
-      const parsedNumbers = numbers.map(Number);
-      eArray = parsedNumbers;
-      eSum = eArray.reduce((total, num) => total + num, 0);
-      break; // "e"の配列を見つけたらループを終了
-    }
-  }
-}
-
-const eAverage = eSum / eArray.length;
-console.log("評価のスコア: " + eAverage);
-const eResultElement = document.getElementById("e_result");
-eResultElement.textContent = "Score: " + eAverage;
-
-
-let dArray = [];
-let dSum = 0;
-for (let i = 0; i < array.length; i++) {
-  const element = array[i];
-  if (element.includes("developmentscore:")&& element.includes(selectedTerm)) {
-    const numbers = element.match(/\d+(\.\d+)?/g); // 正規表現で数字のみを抽出
-    if (numbers) {
-      const parsedNumbers = numbers.map(Number);
-      dArray = parsedNumbers;
-      dSum = dArray.reduce((total, num) => total + num, 0);
-      break; // "d"の配列を見つけたらループを終了
-    }
-  }
-}
-
-const dAverage = dSum / dArray.length;
-console.log("成長のスコア: " + dAverage);
-const dResultElement = document.getElementById("d_result");
-dResultElement.textContent = "Score: " + dAverage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-const ctxR = document.getElementById('chartR').getContext('2d');
-const chartR = new Chart(ctxR, {
-  type: 'bar',
-  data: {
-    labels: ['人間関係'],
-    datasets: [
-      {
-        label: '人間関係',
-        data: [rAverage],
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
-        borderWidth: 1,
-      },
-    ],
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-        max: 6,
-        stepSize: 1,
-        precision: 0,
-      },
-    },
-  },
-});
-
-const ctxJ = document.getElementById('chartJ').getContext('2d');
-const chartJ = new Chart(ctxJ, {
-  type: 'bar',
-  data: {
-    labels: ['仕事要因'],
-    datasets: [
-      {
-        label: '仕事要因',
-        data: [jAverage],
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
-        borderWidth: 1,
-      },
-    ],
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-        max: 6,
-        stepSize: 1,
-        precision: 0,
-      },
-    },
-  },
-});
-
-const ctxO = document.getElementById('chartO').getContext('2d');
-const chartO = new Chart(ctxO, {
-  type: 'bar',
-  data: {
-    labels: ['組織要因'],
-    datasets: [
-      {
-        label: '組織要因',
-        data: [oAverage],
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
-        borderWidth: 1,
-      },
-    ],
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-        max: 6,
-        stepSize: 1,
-        precision: 0,
-      },
-    },
-  },
-});
-
-const ctxE = document.getElementById('chartE').getContext('2d');
-const chartE = new Chart(ctxE, {
-  type: 'bar',
-  data: {
-    labels: ['評価・報酬'],
-    datasets: [
-      {
-        label: '評価・報酬',
-        data: [eAverage],
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
-        borderWidth: 1,
-      },
-    ],
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-        max: 6,
-        stepSize: 1,
-        precision: 0,
-      },
-    },
-  },
-});
-
-const ctxD = document.getElementById('chartD').getContext('2d');
-const chartD = new Chart(ctxD, {
-  type: 'bar',
-  data: {
-    labels: ['成長'],
-    datasets: [
-      {
-        label: '成長',
-        data: [dAverage],
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
-        borderWidth: 1,
-      },
-    ],
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-        max: 6,
-        stepSize: 1,
-        precision: 0,
-      },
-    },
-  },
-});
-
-
-
-
-
-
-
-const totalAverage = (rAverage + jAverage + oAverage + eAverage + dAverage) / 5;
-
-const ctxT = document.getElementById('chartT').getContext('2d');
-const chartT = new Chart(ctxT, {
-  type: 'bar',
-  data: {
-    labels: ['Total'],
-    datasets: [
-      {
-        label: 'Total',
-        data: [totalAverage],
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
-        borderWidth: 1,
-      },
-    ],
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-        max: 6,
-        stepSize: 1,
-        precision: 0,
-      },
-    },
-  },
-});
-
-
-
-const scoreElement = document.getElementById('total_score');
-scoreElement.textContent = 'Total Score: \n' + totalAverage.toFixed(2);
-
-
-}
-
-
-
+let chartDe = null; // Chartオブジェクトの参照を保持する変数を定義
+let chartCon = null; // Chartオブジェクトの参照を保持する変数を定義
 
 
 function calculateAverage1() {
-  const selectedTerm1 = document.getElementById("term").value;
-  const selectedDepartment1 = document.getElementById("department").value;
-  const selectedGrade1 = document.getElementById("grade").value;
-  const selectedAge1 = document.getElementById("age").value;
-  const selectedGender1 = document.getElementById("gender").value;
-  console.log(selectedTerm1);
+      const selectedTerm1 = document.getElementById("term").value;
+      const selectedDepartment1 = document.getElementById("department").value;
+      const selectedElement1 = document.getElementById("element").value;
+      const selectedGrade1 = document.getElementById("grade").value;
+      const selectedAge1 = document.getElementById("age").value;
+      const selectedGender1 = document.getElementById("gender").value;
+      console.log(selectedTerm1);
 
-  let matchingNumbers1 = [];
-  let count1 = 0;
-  let total1 = 0;
+
+
+  
+  let matchingNumbers1 = []; // ローカル変数として変更
+
+
 
   for (let i = 0; i < array.length; i++) {
     const element = array[i];
     const conditionsMatch =
       element.includes(selectedTerm1) &&
+      element.includes(selectedElement1) &&
       element.includes(selectedDepartment1) &&
       element.includes(selectedGrade1) &&
       element.includes(selectedAge1) &&
@@ -1607,10 +1335,11 @@ function calculateAverage1() {
   if (matchingNumbers1.length > 0) {
     const average1 =
       matchingNumbers1.reduce((total, num) => total + num, 0) / matchingNumbers1.length;
-    console.log("Score: " + average1);
+    const roundedAverage1 = average1.toFixed(2); // 小数点第二位までに修正
+    console.log("スコア: " + roundedAverage1);
 
     const resultElement1 = document.getElementById("de_result");
-    resultElement1.textContent = "Score: " + average1;
+    resultElement1.textContent = "スコア: " + roundedAverage1;
 
     const ctxDe = document.getElementById('chartDe').getContext('2d');
     const chartDe = new Chart(ctxDe, {
@@ -1672,262 +1401,116 @@ function calculateAverage1() {
   }
 }
 
-const calculateButton1 = document.getElementById("calculate_button");
+
+function calculateAverage2() {
+
+  const selectedTerm2 = document.getElementById("term2").value;
+  const selectedDepartment2 = document.getElementById("department2").value;
+  const selectedElement2 = document.getElementById("element2").value;
+  const selectedGrade2 = document.getElementById("grade2").value;
+  const selectedAge2 = document.getElementById("age2").value;
+  const selectedGender2 = document.getElementById("gender2").value;
+  console.log(selectedTerm2);
+
+  let matchingNumbers2 = [];
+
+
+  for (let j = 0; j < array.length; j++) {
+    const element2 = array[j];
+    const conditionsMatch2 =
+      element2.includes(selectedTerm2) &&
+      element2.includes(selectedElement2) &&
+      element2.includes(selectedDepartment2) &&
+      element2.includes(selectedGrade2) &&
+      element2.includes(selectedAge2) &&
+      element2.includes(selectedGender2);
+    if (conditionsMatch2) {
+      const numbers2 = element2.match(/\d+(\.\d+)?/g);
+      if (numbers2) {
+        const parsedNumbers2 = numbers2.map(Number);
+        matchingNumbers2.push(...parsedNumbers2);
+      }
+    }
+  }
+
+  if (matchingNumbers2.length > 0) {
+    const average2 =
+      matchingNumbers2.reduce((total, num) => total + num, 0) / matchingNumbers2.length;
+    const roundedAverage2 = average2.toFixed(2); // 小数点第二位までに修正
+    console.log("スコア: " + roundedAverage2);
+
+    const resultElement2 = document.getElementById("con_result");
+    resultElement2.textContent = "スコア: " + roundedAverage2;
+
+    const ctxCon = document.getElementById('chartCon').getContext('2d');
+    const chartCon = new Chart(ctxCon, {
+      type: 'bar',
+      data: {
+        labels: ['分析'],
+        datasets: [
+          {
+            label: '分析',
+            data: [average2],
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 6,
+            stepSize: 1,
+            precision: 0,
+          },
+        },
+      },
+    });
+  } else {
+    console.log("該当するデータがありません。");
+    const resultElement2 = document.getElementById("con_result");
+    resultElement2.textContent = "該当するデータがありません。";
+
+    const ctxCon = document.getElementById('chartCon').getContext('2d');
+    const chartCon = new Chart(ctxCon, {
+      type: 'bar',
+      data: {
+        labels: ['分析'],
+        datasets: [
+          {
+            label: '分析',
+            data: [],
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 6,
+            stepSize: 1,
+            precision: 0,
+          },
+        },
+      },
+    });
+  }
+}
+
+const calculateButton1 = document.getElementById("calculate_button1");
 calculateButton1.addEventListener("click", calculateAverage1);
+
+const calculateButton2 = document.getElementById("calculate_button2");
+calculateButton2.addEventListener("click", calculateAverage2);
 
 function reloadPage() {
   location.reload();
 }
-
-
-//   let matchingNumbers1 = [];
-//   let count1 = 0;
-//   let total1 = 0;
-
-//   for (let i = 0; i < array.length; i++) {
-//     const element = array[i];
-//     const conditionsMatch =
-//       element.includes(selectedTerm1) &&
-//       element.includes(selectedDepartment1) &&
-//       element.includes(selectedGrade1) &&
-//       element.includes(selectedAge1) &&
-//       element.includes(selectedGender1);
-//     if (conditionsMatch) {
-//       const numbers = element.match(/\d+(\.\d+)?/g);
-//       if (numbers) {
-//         const parsedNumbers = numbers.map(Number);
-//         matchingNumbers1.push(...parsedNumbers);
-//       }
-//     }
-//   }
-
-//   if (matchingNumbers1.length > 0) {
-//     const average1 =
-//       matchingNumbers1.reduce((total, num) => total + num, 0) / matchingNumbers1.length;
-//     console.log("スコア: " + average1);
-
-//     const resultElement1 = document.getElementById("de_result");
-//     resultElement1.textContent = "スコア: " + average1;
-
-//     const ctxCon = document.getElementById('chartDe').getContext('2d');
-//     const chartCon = new Chart(ctxCon, {
-//       type: 'bar',
-//       data: {
-//         labels: ['分析'],
-//         datasets: [
-//           {
-//             label: '分析',
-//             data: [average1],
-//             backgroundColor: 'rgba(75, 192, 192, 0.2)',
-//             borderColor: 'rgba(75, 192, 192, 1)',
-//             borderWidth: 1,
-//           },
-//         ],
-//       },
-//       options: {
-//         scales: {
-//           y: {
-//             beginAtZero: true,
-//             max: 6,
-//             stepSize: 1,
-//             precision: 0,
-//           },
-//         },
-//       },
-//     });
-//   } else {
-//     console.log("該当するデータがありません。");
-//     const resultElement1 = document.getElementById("con_result");
-//     resultElement1.textContent = "該当するデータがありません。";
-
-//     const ctxCon = document.getElementById('chartCon').getContext('2d');
-//     const chartCon = new Chart(ctxCon, {
-//       type: 'bar',
-//       data: {
-//         labels: ['分析'],
-//         datasets: [
-//           {
-//             label: '分析',
-//             data: [],
-//             backgroundColor: 'rgba(75, 192, 192, 0.2)',
-//             borderColor: 'rgba(75, 192, 192, 1)',
-//             borderWidth: 1,
-//           },
-//         ],
-//       },
-//       options: {
-//         scales: {
-//           y: {
-//             beginAtZero: true,
-//             max: 6,
-//             stepSize: 1,
-//             precision: 0,
-//           },
-//         },
-//       },
-//     });
-//   }
-// }
-
-// const cashButton2 = document.getElementById("cash_button2");
-// cashButton2.addEventListener("click", reloadPage);
-
-// function reloadPage() {
-//   location.reload();
-// }
-
-
-
-
-
-
-
-
-
-//     updateChart(); // グラフを更新する関数を呼び出す
-//   } else {
-//     console.log("該当するデータがありません。");
-//     const resultElement1 = document.getElementById("de_result");
-//     resultElement1.textContent = "該当するデータがありません。";
-
-//     clearChart(); // グラフをクリアする関数を呼び出す
-//   }
-// }
-
-
-
-// function updateChart() {
-//   const ctxDe = document.getElementById('chartDe').getContext('2d');
-
-//   if (average) {
-//     const chartDe = new Chart(ctxDe, {
-//       type: 'bar',
-//       data: {
-//         labels: ['分析'],
-//         datasets: [
-//           {
-//             label: '分析',
-//             data: [average],
-//             backgroundColor: 'rgba(75, 192, 192, 0.2)',
-//             borderColor: 'rgba(75, 192, 192, 1)',
-//             borderWidth: 1,
-//           },
-//         ],
-//       },
-//       options: {
-//         scales: {
-//           y: {
-//             beginAtZero: true,
-//             max: 6,
-//             stepSize: 1,
-//             precision: 0,
-//           },
-//         },
-//       },
-//     });
-//   }}
-
-
-
-// const cashButton = document.getElementById("cash_button");
-// cashButton.addEventListener("click", reloadPage);
-
-// function reloadPage() {
-//   location.reload();
-// }
-
-
-// let average1 = 0; // グローバル変数として宣言する
-
-// const calculateButton1 = document.getElementById("calculate_button2");
-// calculateButton1.addEventListener("click", calculateAverage1);
-
-// function calculateAverage1() {
-//   const selectedTerm1 = document.getElementById("term2").value;
-//   const selectedDepartment1 = document.getElementById("department2").value;
-//   const selectedGrade1 = document.getElementById("grade2").value;
-//   const selectedAge1 = document.getElementById("age2").value;
-//   const selectedGender1 = document.getElementById("gender2").value;
-//   console.log(selectedDepartment1);
-
-//   let matchingNumbers1 = [];
-//   let count1 = 0;
-//   let total1 = 0;
-
-//   for (let i = 0; i < array.length; i++) {
-//     const element = array[i];
-//     const conditionsMatch =
-//           element.includes(selectedTerm1)&&
-//       element.includes(selectedDepartment1) &&
-//       element.includes(selectedGrade1) &&
-//       element.includes(selectedAge1) &&
-//       element.includes(selectedGender1);
-//     if (conditionsMatch) {
-//       const numbers = element.match(/\d+(\.\d+)?/g);
-//       if (numbers) {
-//         const parsedNumbers = numbers.map(Number);
-//         matchingNumbers1.push(...parsedNumbers);
-//       }
-//     }
-//   }
-
-//   if (matchingNumbers1.length > 0) {
-//     average1 =
-//       matchingNumbers1.reduce((total, num) => total + num, 0) / matchingNumbers1.length;
-//     console.log("スコア: " + average1);
-
-//     const resultElement1 = document.getElementById("con_result");
-//     resultElement1.textContent = "スコア: " + average1;
-
-//     updateChart1(); // グラフを更新する関数を呼び出す
-//   } else {
-//     console.log("該当するデータがありません。");
-//     const resultElement1 = document.getElementById("con_result");
-//     resultElement1.textContent = "該当するデータがありません。";
-
-//     clearChart1(); // グラフをクリアする関数を呼び出す
-//   }
-// }
-
-// function updateChart1() {
-//   const ctxCon = document.getElementById('chartCon').getContext('2d');
-//   const chartCon = new Chart(ctxCon, {
-//     type: 'bar',
-//     data: {
-//       labels: ['分析'],
-//       datasets: [
-//         {
-//           label: '分析',
-//           data: [average1],
-//           backgroundColor: 'rgba(75, 192, 192, 0.2)',
-//           borderColor: 'rgba(75, 192, 192, 1)',
-//           borderWidth: 1,
-//         },
-//       ],
-//     },
-//     options: {
-//       scales: {
-//         y: {
-//           beginAtZero: true,
-//           max: 6,
-//           stepSize: 1,
-//           precision: 0,
-//         },
-//       },
-//     },
-//   });
-// }
-
-
-// const cashButton2 = document.getElementById("cash_button2");
-// cashButton2.addEventListener("click", reloadPage);
-
-// function reloadPage() {
-//   location.reload();
-// }
-
-
-
 
 
   </script>

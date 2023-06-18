@@ -1654,7 +1654,7 @@ a:hover {
         <div class="selectbtn"><a href="#kpitop">目標設定</a></div>
         <div class="selectbtn"><a href="#sheettop">自己評価</a></div>
         <div class="selectbtn"><a href="#valuecheck">評価確認</a></div>
-        <div class="selectbtn"><a href="sv_input.php">サーベイ</a></div>
+        <div class="selectbtn"><a href="login.php">サーベイ</a></div>
       </div>
     </div>
   </header>

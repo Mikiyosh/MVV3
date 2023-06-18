@@ -44,6 +44,12 @@ $d_array[] = $_POST["d2"];
 $d_array[] = $_POST["d3"];
 $d_array[] = $_POST["d4"];
 
+$term = isset($_SESSION['term']) ? $_SESSION['term'] : '';
+$section = isset($_SESSION['section']) ? $_SESSION['section'] : '';
+$grade = isset($_SESSION['grade']) ? $_SESSION['grade'] : '';
+$age = isset($_SESSION['age']) ? $_SESSION['age'] : '';
+$gender = isset($_SESSION['gender']) ? $_SESSION['gender'] : '';
+
 // ファイルを開く．引数が`a`である部分に注目！
 $file = fopen('data/todo.txt', 'a');
 // ファイルをロックする
@@ -51,25 +57,27 @@ flock($file, LOCK_EX);
 
 // データ1件ずつをファイルに書き込む
 foreach ($r_array as $data) {
-    fwrite($file, $username . 'relationshipscore: ' . $data . "\n");
+    fwrite($file, $username . ' term: ' . $term . ' section: ' . $section . ' grade: ' . $grade . ' age: ' . $age . ' gender: ' . $gender . ' relationshipscore: ' . $data . "\n");
 }
 foreach ($j_array as $data) {
-    fwrite($file, $username . 'jobscore: ' . $data . "\n");
+    fwrite($file, $username . ' term: ' . $term . ' section: ' . $section . ' grade: ' . $grade . ' age: ' . $age . ' gender: ' . $gender . ' jobscore: ' . $data . "\n");
 }
 foreach ($o_array as $data) {
-    fwrite($file, $username . 'organizationscore: ' . $data . "\n");
+    fwrite($file, $username . ' term: ' . $term . ' section: ' . $section . ' grade: ' . $grade . ' age: ' . $age . ' gender: ' . $gender . ' organizationscore: ' . $data . "\n");
 }
 foreach ($e_array as $data) {
-    fwrite($file, $username . 'evaluationscore: ' . $data . "\n");
+    fwrite($file, $username . ' term: ' . $term . ' section: ' . $section . ' grade: ' . $grade . ' age: ' . $age . ' gender: ' . $gender . ' evaluationscore: ' . $data . "\n");
 }
 foreach ($d_array as $data) {
-    fwrite($file, $username . 'developmentscore: ' . $data . "\n");
+    fwrite($file, $username . ' term: ' . $term . ' section: ' . $section . ' grade: ' . $grade . ' age: ' . $age . ' gender: ' . $gender . ' developmentscore: ' . $data . "\n");
 }
 
 // ファイルのロックを解除する
 flock($file, LOCK_UN);
 // ファイルを閉じる
 fclose($file);
+
+// データ入力画面に
 
 // データ入力画面に移動する
 header("Location: sv_input.php");

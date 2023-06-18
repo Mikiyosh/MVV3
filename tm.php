@@ -850,7 +850,7 @@
                 </div>
 
                   <div class="button-054">
-                    <a href="sv_read.php" class="">サーベイ結果</a>
+                    <a href="sum.php" class="">サーベイ結果</a>
                 </div>
 
 
