@@ -1129,21 +1129,7 @@ Engagement Key Factorsは、以下の5つの要素で構成されています。
 
 
 
-<div>
 
-
-    <div class="tscore">
-
-      <p class="score">TOTAL SCORE</p>
-      <p id="total_score">Total Score</p>
-
-    <div class="tscorede">
-      <canvas id="chartT"></canvas>
-    </div>
-  
-    </div>
-
-</div>
 
 
 <div class="ekfwrapper">

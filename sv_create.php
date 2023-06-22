@@ -1,87 +1,80 @@
 <?php
+
 session_start();
 
-// フォームデータの取得
-$username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
-
-// アルファベットごとの配列を初期化
-$r_array = array();
-$j_array = array();
-$o_array = array();
-$e_array = array();
-$d_array = array();
-
-// POSTデータを受け取る
-$r_array[] = $_POST["r1"];
-$r_array[] = $_POST["r2"];
-$r_array[] = $_POST["r3"];
-$r_array[] = $_POST["r4"];
-$r_array[] = $_POST["r5"];
-$r_array[] = $_POST["r6"];
-$r_array[] = $_POST["r7"];
-$r_array[] = $_POST["r8"];
-
-$j_array[] = $_POST["j1"];
-$j_array[] = $_POST["j2"];
-$j_array[] = $_POST["j3"];
-$j_array[] = $_POST["j4"];
-$j_array[] = $_POST["j5"];
-$j_array[] = $_POST["j6"];
-
-$o_array[] = $_POST["o1"];
-$o_array[] = $_POST["o2"];
-$o_array[] = $_POST["o3"];
-$o_array[] = $_POST["o4"];
-$o_array[] = $_POST["o5"];
-$o_array[] = $_POST["o6"];
-
-$e_array[] = $_POST["e1"];
-$e_array[] = $_POST["e2"];
-$e_array[] = $_POST["e3"];
-
-$d_array[] = $_POST["d1"];
-$d_array[] = $_POST["d2"];
-$d_array[] = $_POST["d3"];
-$d_array[] = $_POST["d4"];
-
-$term = isset($_SESSION['term']) ? $_SESSION['term'] : '';
-$section = isset($_SESSION['section']) ? $_SESSION['section'] : '';
-$grade = isset($_SESSION['grade']) ? $_SESSION['grade'] : '';
-$age = isset($_SESSION['age']) ? $_SESSION['age'] : '';
-$gender = isset($_SESSION['gender']) ? $_SESSION['gender'] : '';
-
-// ファイルを開く．引数が`a`である部分に注目！
-$file = fopen('data/todo.txt', 'a');
-// ファイルをロックする
-flock($file, LOCK_EX);
-
-// データ1件ずつをファイルに書き込む
-foreach ($r_array as $data) {
-    fwrite($file, $username . ' term: ' . $term . ' section: ' . $section . ' grade: ' . $grade . ' age: ' . $age . ' gender: ' . $gender . ' relationshipscore: ' . $data . "\n");
-}
-foreach ($j_array as $data) {
-    fwrite($file, $username . ' term: ' . $term . ' section: ' . $section . ' grade: ' . $grade . ' age: ' . $age . ' gender: ' . $gender . ' jobscore: ' . $data . "\n");
-}
-foreach ($o_array as $data) {
-    fwrite($file, $username . ' term: ' . $term . ' section: ' . $section . ' grade: ' . $grade . ' age: ' . $age . ' gender: ' . $gender . ' organizationscore: ' . $data . "\n");
-}
-foreach ($e_array as $data) {
-    fwrite($file, $username . ' term: ' . $term . ' section: ' . $section . ' grade: ' . $grade . ' age: ' . $age . ' gender: ' . $gender . ' evaluationscore: ' . $data . "\n");
-}
-foreach ($d_array as $data) {
-    fwrite($file, $username . ' term: ' . $term . ' section: ' . $section . ' grade: ' . $grade . ' age: ' . $age . ' gender: ' . $gender . ' developmentscore: ' . $data . "\n");
+// セッションからログインユーザーの情報を取得
+if (!isset($_SESSION['username']) || !$_SESSION['logged_in']) {
+  // ログインしていない場合はログイン画面にリダイレクト
+  header('Location: login.php');
+  exit;
 }
 
-// ファイルのロックを解除する
-flock($file, LOCK_UN);
-// ファイルを閉じる
-fclose($file);
+// ログインユーザーの情報を取得
+$username = $_SESSION['username'];
+$password = $_SESSION['password'];
+$term = $_SESSION['term'];
+$section = $_SESSION['section'];
+$grade = $_SESSION['grade'];
+$age = $_SESSION['age'];
+$gender = $_SESSION['gender'];
 
-// データ入力画面に
+
+$culture = isset($_POST['culture']) ? $_POST['culture'] : array(); // 複数の選択肢を配列として受け取る
+$culture1 = isset($culture[0]) ? $culture[0] : '';
+$culture2 = isset($culture[1]) ? $culture[1] : '';
+$culture3 = isset($culture[2]) ? $culture[2] : '';
+$culture4 = isset($culture[3]) ? $culture[3] : '';
+$culture5 = isset($culture[4]) ? $culture[4] : '';
+
+// 必要な情報を入力しているかチェック
+if (count($culture) != 5) {
+  exit('自社の文化を5つ選択してください');
+}
+
+
+
+
+// 各種項目設定
+$dbn = 'mysql:dbname=es_score;charset=utf8mb4;port=3306;host=localhost';
+$user = 'root';
+$pwd = '';
+
+// DB接続
+try {
+  $pdo = new PDO($dbn, $user, $pwd);
+} catch (PDOException $e) {
+  echo json_encode(["db error" => $e->getMessage()]);
+  exit();
+}
+
+// SQL作成&実行
+$sql = 'INSERT INTO org_table (username, password, term, section, grade, age, gender, culture1, culture2, culture3, culture4, culture5) VALUES (:username, :password, :term, :section, :grade, :age, :gender, :culture1, :culture2, :culture3, :culture4, :culture5)';
+$stmt = $pdo->prepare($sql);
+
+// バインド変数を設定
+$stmt->bindValue(':username', $username, PDO::PARAM_STR);
+$stmt->bindValue(':password', $password, PDO::PARAM_STR);
+$stmt->bindValue(':term', $term, PDO::PARAM_STR);
+$stmt->bindValue(':section', $section, PDO::PARAM_STR);
+$stmt->bindValue(':grade', $grade, PDO::PARAM_STR);
+$stmt->bindValue(':age', $age, PDO::PARAM_STR);
+$stmt->bindValue(':gender', $gender, PDO::PARAM_STR);
+$stmt->bindValue(':culture1', $culture1, PDO::PARAM_STR);
+$stmt->bindValue(':culture2', $culture2, PDO::PARAM_STR);
+$stmt->bindValue(':culture3', $culture3, PDO::PARAM_STR);
+$stmt->bindValue(':culture4', $culture4, PDO::PARAM_STR);
+$stmt->bindValue(':culture5', $culture5, PDO::PARAM_STR);
+
+
+// SQL実行（実行に失敗すると `sql error ...` が出力される）
+try {
+  $status = $stmt->execute();
+} catch (PDOException $e) {
+  echo json_encode(["sql error" => $e->getMessage()]);
+  exit();
+}
 
 // データ入力画面に移動する
 header("Location: sv_input.php");
-
-
-
+exit();
 ?>
